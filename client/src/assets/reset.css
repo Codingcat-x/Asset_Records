@@ -1,0 +1,9 @@
+:root {
+  --margin-size: 12px;
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto var(--margin-size);
+}
+.d-flex {display: flex;}
+.d-flex.center {justify-content: center;}
