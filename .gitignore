@@ -17,6 +17,9 @@ pnpm-debug.log*
 .env.local
 .env.*.local
 
+# backend user data (items / categories / uploaded images) - never push to git
+server/data/
+
 # editor / OS
 .DS_Store
 .idea

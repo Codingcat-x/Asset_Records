@@ -1,23 +1,12 @@
 import Vue from 'vue'
 import {
-  Button,
-  Input,
-  Select,
-  Option,
-  Message,
-  MessageBox,
-  Loading,
-  Container,
-  Header,
-  Aside,
-  Main,
-  Footer,
-  RadioGroup,
-  RadioButton,
-  Menu,
-  MenuItemGroup,
-  MenuItem,
-  Submenu
+  Button, Input, Select, Option, Message,
+  MessageBox, Loading, Container, Header,
+  Aside, Main, Footer, RadioGroup, RadioButton,
+  Menu, MenuItemGroup, MenuItem, Submenu,
+  Dialog, Upload, Form, FormItem, DatePicker,
+  InputNumber, Switch, Card, Tag, Row, Col, Slider,
+  Empty, Dropdown, DropdownMenu, DropdownItem
 } from 'element-ui'
 
 // 按需注册组件
@@ -25,7 +14,9 @@ const components = [
   Button, Input, Select, Option, Container,
   Header, Aside, Main, Footer,
   RadioButton, RadioGroup, Menu, MenuItemGroup, MenuItem,
-  Submenu
+  Submenu, Dialog, Upload, Dropdown,
+  Form, FormItem, DatePicker, InputNumber, Switch,
+  Card, Tag, Row, Col, Slider, Empty, DropdownMenu, DropdownItem
 ]
 
 components.forEach(comp => Vue.use(comp))

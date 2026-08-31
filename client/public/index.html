@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <script>
+      // 防首屏闪烁：挂载前按 localStorage 提前应用主题类（与 src/utils/theme.js 的 THEME_KEY 一致）
+      ;(function () {
+        try {
+          var m = localStorage.getItem('theme-mode')
+          var dark = m === 'dark' || ((m === 'auto' || m === null) &&
+            window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          if (dark) document.documentElement.classList.add('dark')
+        } catch (e) {}
+      })()
+    </script>
   </head>
   <body>
     <noscript>

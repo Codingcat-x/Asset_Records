@@ -1,0 +1,500 @@
+/* ============================================================
+   Element UI 深色模式覆盖样式
+   通过给 <html> 添加 .dark 类启用（见 utils/theme.js）
+   所有选择器以 html.dark 为根作用域
+   色板：基底 #141414 / 面板卡片 #1d1e1f / 浮层输入 #262626
+        边框 #4c4d4f / 文字 #e5eaf3 #cfd3dc #a3a6ad
+   ============================================================ */
+
+/* ---------- 0. 变量与基底 ---------- */
+html.dark {
+  color-scheme: dark; /* 原生滚动条/输入控件/选区随之变深 */
+
+  --card-bg: #1d1e1f;
+  --card-border-color: #4c4d4f;
+
+  background-color: #141414;
+  color: #cfd3dc;
+}
+
+html.dark body {
+  background-color: #141414;
+  color: #cfd3dc;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5 {
+  color: #e5eaf3;
+}
+
+/* ---------- 1. 滚动条 ---------- */
+html.dark * {
+  scrollbar-color: #4c4d4f transparent;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #4c4d4f;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #5a5c5f;
+}
+
+/* ---------- 2. 布局：aside / header / main ---------- */
+html.dark .el-aside {
+  background-color: #1d1e1f;
+}
+html.dark .el-header,
+html.dark .el-main {
+  background-color: #141414;
+}
+
+/* ---------- 3. 侧边菜单 el-menu ---------- */
+html.dark .el-menu {
+  background-color: #1d1e1f;
+  border-right-color: #4c4d4f;
+}
+html.dark .el-menu-item,
+html.dark .el-submenu__title {
+  color: #cfd3dc;
+}
+html.dark .el-menu-item:hover,
+html.dark .el-menu-item:focus,
+html.dark .el-submenu__title:hover {
+  background-color: #262626;
+  color: #e5eaf3;
+}
+html.dark .el-menu-item.is-active {
+  color: #409eff;
+  background-color: rgba(64, 158, 255, 0.14);
+}
+html.dark .el-menu-item-group__title {
+  color: #a3a6ad;
+}
+html.dark .el-menu--popup {
+  background-color: #262626;
+}
+html.dark .el-menu--popup .el-menu-item:hover {
+  background-color: #1d1e1f;
+}
+html.dark .el-menu--collapse .el-menu-item {
+  background-color: #1d1e1f;
+}
+
+/* ---------- 4. 卡片 el-card ---------- */
+html.dark .el-card {
+  background-color: #1d1e1f;
+  border-color: #4c4d4f;
+  color: #cfd3dc;
+}
+html.dark .el-card__header {
+  border-bottom-color: #4c4d4f;
+  color: #e5eaf3;
+}
+html.dark .el-card.is-always-shadow,
+html.dark .el-card.is-hover-shadow:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+/* ListPage 选中态卡片 */
+html.dark .el-card.active {
+  background-color: #262626;
+  border: 2px solid var(--primary-color);
+}
+
+/* ---------- 5. 按钮 el-button ---------- */
+html.dark .el-button {
+  background-color: #262626;
+  border-color: #4c4d4f;
+  color: #cfd3dc;
+}
+html.dark .el-button:hover,
+html.dark .el-button:focus,
+html.dark .el-button.is-active {
+  color: #409eff;
+  border-color: #409eff;
+  background-color: rgba(64, 158, 255, 0.12);
+}
+html.dark .el-button:active {
+  color: #3a8ee6;
+  border-color: #3a8ee6;
+}
+html.dark .el-button.is-disabled,
+html.dark .el-button.is-disabled:hover {
+  background-color: #1d1e1f;
+  border-color: #4c4d4f;
+  color: #8a8f9a;
+}
+html.dark .el-button--primary {
+  background-color: #409eff;
+  border-color: #409eff;
+  color: #fff;
+}
+html.dark .el-button--primary:hover,
+html.dark .el-button--primary:focus {
+  background-color: #66b1ff;
+  border-color: #66b1ff;
+  color: #fff;
+}
+html.dark .el-button--primary.is-plain {
+  background-color: rgba(64, 158, 255, 0.12);
+  border-color: rgba(64, 158, 255, 0.4);
+  color: #79bbff;
+}
+html.dark .el-button--danger {
+  background-color: #f56c6c;
+  border-color: #f56c6c;
+}
+html.dark .el-button--danger:hover {
+  background-color: #f78989;
+  border-color: #f78989;
+}
+html.dark .el-button--warning {
+  background-color: #e6a23c;
+  border-color: #e6a23c;
+}
+html.dark .el-button--warning:hover {
+  background-color: #ebb563;
+  border-color: #ebb563;
+}
+/* AppHeader 返回/前进圆钮 */
+html.dark .el-button.norm-btn {
+  background-color: #262626;
+  border-color: #4c4d4f;
+}
+
+/* ---------- 6. 输入框 el-input / el-textarea / 输入组 / input-number ---------- */
+html.dark .el-input__inner,
+html.dark .el-textarea__inner {
+  background-color: #262626;
+  border-color: #4c4d4f;
+  color: #e5eaf3;
+}
+html.dark .el-input__inner::placeholder,
+html.dark .el-input__inner::-webkit-input-placeholder,
+html.dark .el-textarea__inner::placeholder {
+  color: #8a8f9a;
+}
+html.dark .el-input__inner:hover,
+html.dark .el-textarea__inner:hover {
+  border-color: #5a5c5f;
+}
+html.dark .el-input__inner:focus,
+html.dark .el-textarea__inner:focus,
+html.dark .el-input.is-focus .el-input__inner {
+  border-color: #409eff;
+}
+html.dark .el-input.is-disabled .el-input__inner,
+html.dark .el-textarea.is-disabled .el-textarea__inner {
+  background-color: #1d1e1f;
+  border-color: #4c4d4f;
+  color: #8a8f9a;
+}
+html.dark .el-input__icon {
+  color: #a3a6ad;
+}
+html.dark .el-input-group__prepend,
+html.dark .el-input-group__append {
+  background-color: #1d1e1f;
+  border-color: #4c4d4f;
+  color: #cfd3dc;
+}
+html.dark .el-input-number__decrease,
+html.dark .el-input-number__increase {
+  background-color: #1d1e1f;
+  border-color: #4c4d4f;
+  color: #a3a6ad;
+}
+
+/* ---------- 7. 下拉 el-select-dropdown（渲染到 body） ---------- */
+html.dark .el-select-dropdown {
+  background-color: #262626;
+  border-color: #4c4d4f;
+}
+html.dark .el-select-dropdown__item {
+  color: #cfd3dc;
+}
+html.dark .el-select-dropdown__item:hover,
+html.dark .el-select-dropdown__item.hover {
+  background-color: #1d1e1f;
+  color: #e5eaf3;
+}
+html.dark .el-select-dropdown__item.selected {
+  color: #409eff;
+}
+html.dark .el-select-dropdown__item.selected.hover {
+  background-color: #1d1e1f;
+}
+
+/* ---------- 8. 对话框 el-dialog ---------- */
+html.dark .el-dialog {
+  background-color: #262626;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+html.dark .el-dialog__title {
+  color: #e5eaf3;
+}
+html.dark .el-dialog__body {
+  color: #cfd3dc;
+}
+html.dark .el-dialog__headerbtn .el-dialog__close {
+  color: #a3a6ad;
+}
+html.dark .el-dialog__headerbtn:hover .el-dialog__close {
+  color: #409eff;
+}
+html.dark .el-dialog__footer {
+  border-top: 1px solid #4c4d4f;
+}
+
+/* ---------- 9. 消息框 el-message-box（$confirm，渲染到 body） ---------- */
+html.dark .el-message-box {
+  background-color: #262626;
+  border-color: #4c4d4f;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+html.dark .el-message-box__title {
+  color: #e5eaf3;
+}
+html.dark .el-message-box__content,
+html.dark .el-message-box__message {
+  color: #cfd3dc;
+}
+html.dark .el-message-box__headerbtn .el-message-box__close {
+  color: #a3a6ad;
+}
+
+/* ---------- 10. 消息提示 el-message（$message，渲染到 body） ---------- */
+html.dark .el-message {
+  background-color: #262626;
+  border-color: #4c4d4f;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+html.dark .el-message__content {
+  color: #e5eaf3;
+}
+html.dark .el-message__closeBtn {
+  color: #a3a6ad;
+}
+
+/* ---------- 11. 表单 el-form ---------- */
+html.dark .el-form-item__label {
+  color: #cfd3dc;
+}
+html.dark .el-form-item__error {
+  color: #f56c6c;
+}
+
+/* ---------- 12. 单选按钮组 el-radio-button ---------- */
+html.dark .el-radio-button__inner {
+  background-color: #262626;
+  border-color: #4c4d4f;
+  color: #cfd3dc;
+}
+html.dark .el-radio-button__inner:hover {
+  color: #409eff;
+}
+html.dark .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+  background-color: #409eff;
+  border-color: #409eff;
+  color: #fff;
+  box-shadow: -1px 0 0 0 #409eff;
+}
+
+/* ---------- 13. 开关 el-switch ---------- */
+html.dark .el-switch__core {
+  background-color: #4c4d4f;
+  border-color: #4c4d4f;
+}
+html.dark .el-switch__core:after {
+  background-color: #fff;
+}
+html.dark .el-switch.is-checked .el-switch__core {
+  background-color: #409eff;
+  border-color: #409eff;
+}
+html.dark .el-switch__label {
+  color: #a3a6ad;
+}
+html.dark .el-switch__label.is-active {
+  color: #409eff;
+}
+
+/* ---------- 14. 标签 el-tag ---------- */
+html.dark .el-tag {
+  background-color: rgba(64, 158, 255, 0.12);
+  border-color: rgba(64, 158, 255, 0.4);
+  color: #79bbff;
+}
+html.dark .el-tag--success {
+  background-color: rgba(103, 194, 58, 0.12);
+  border-color: rgba(103, 194, 58, 0.4);
+  color: #85ce61;
+}
+html.dark .el-tag--info {
+  background-color: rgba(144, 147, 153, 0.12);
+  border-color: rgba(144, 147, 153, 0.4);
+  color: #a3a6ad;
+}
+html.dark .el-tag--warning {
+  background-color: rgba(230, 162, 60, 0.12);
+  border-color: rgba(230, 162, 60, 0.4);
+  color: #ebb563;
+}
+html.dark .el-tag--danger {
+  background-color: rgba(245, 108, 108, 0.12);
+  border-color: rgba(245, 108, 108, 0.4);
+  color: #f78989;
+}
+
+/* ---------- 15. 滑块 el-slider ---------- */
+html.dark .el-slider__runway {
+  background-color: #4c4d4f;
+}
+html.dark .el-slider__bar {
+  background-color: #409eff;
+}
+html.dark .el-slider__button {
+  border-color: #409eff;
+  background-color: #fff;
+}
+html.dark .el-slider__stop {
+  border-color: #4c4d4f;
+  background-color: #4c4d4f;
+}
+
+/* ---------- 16. 上传 el-upload ---------- */
+html.dark .el-upload-dragger {
+  background-color: #1d1e1f;
+  border-color: #4c4d4f;
+}
+html.dark .el-upload-dragger:hover,
+html.dark .el-upload-dragger.is-dragover {
+  border-color: #409eff;
+}
+html.dark .el-upload__text {
+  color: #a3a6ad;
+}
+html.dark .el-upload-list__item-name {
+  color: #cfd3dc;
+}
+html.dark .el-upload-list__item-name:hover {
+  color: #409eff;
+}
+/* ItemForm 封面虚线框 */
+html.dark .cover-uploader .el-upload {
+  border-color: #4c4d4f;
+}
+html.dark .cover-uploader .el-upload:hover {
+  border-color: #409eff;
+}
+
+/* ---------- 17. 日期选择 el-date-picker（渲染到 body） ---------- */
+html.dark .el-picker-panel {
+  background-color: #262626;
+  border-color: #4c4d4f;
+  color: #cfd3dc;
+}
+html.dark .el-date-picker__header-label,
+html.dark .el-date-picker__header {
+  color: #e5eaf3;
+}
+html.dark .el-picker-panel__icon-btn {
+  color: #a3a6ad;
+}
+html.dark .el-date-table th {
+  color: #a3a6ad;
+  border-bottom-color: #4c4d4f;
+}
+html.dark .el-date-table td span {
+  color: #cfd3dc;
+}
+html.dark .el-date-table td.next-month span,
+html.dark .el-date-table td.prev-month span {
+  color: #8a8f9a;
+}
+html.dark .el-date-table td.available:hover span,
+html.dark .el-date-table td.available:hover div {
+  background-color: #1d1e1f;
+  color: #409eff;
+}
+html.dark .el-date-table td.current:not(.disabled) span {
+  background-color: #409eff;
+  color: #fff;
+}
+html.dark .el-date-table td.today span {
+  color: #409eff;
+}
+html.dark .el-date-table td.disabled div {
+  background-color: #1d1e1f;
+  color: #8a8f9a;
+}
+
+/* ---------- 18. 表格 el-table（兜底） ---------- */
+html.dark .el-table {
+  background-color: #1d1e1f;
+  color: #cfd3dc;
+}
+html.dark .el-table::before,
+html.dark .el-table--border::after,
+html.dark .el-table--group::after {
+  background-color: #4c4d4f;
+}
+html.dark .el-table th.el-table__cell {
+  background-color: #1d1e1f;
+  color: #e5eaf3;
+}
+html.dark .el-table th.el-table__cell,
+html.dark .el-table td.el-table__cell {
+  border-bottom-color: #4c4d4f;
+}
+html.dark .el-table td.el-table__cell {
+  background-color: #1d1e1f;
+  color: #cfd3dc;
+}
+html.dark .el-table--enable-row-hover .el-table__body tr:hover > td.el-table__cell {
+  background-color: #262626;
+}
+html.dark .el-table__empty-text {
+  color: #a3a6ad;
+}
+
+/* ---------- 19. 全屏加载 el-loading（默认白色半透明会罩白深色内容） ---------- */
+html.dark .el-loading-mask {
+  background-color: rgba(20, 20, 20, 0.85);
+}
+html.dark .el-loading-text,
+html.dark .el-loading-spinner .circular {
+  color: #e5eaf3;
+}
+
+/* ---------- 20. 空状态 el-empty ---------- */
+html.dark .el-empty__description {
+  color: #a3a6ad;
+}
+
+/* ---------- 21. 应用自身 scoped 样式中的硬编码色覆盖 ---------- */
+/* 说明：scoped 规则编译为 .xxx[data-v-xxx]（(0,2,0) 起），
+   html.dark .xxx 恰好高 1 个元素类型，可稳定覆盖 */
+html.dark .page-title {
+  color: #e5eaf3;
+}
+html.dark .cols-label {
+  color: #a3a6ad;
+}
+html.dark .cols-value {
+  color: #cfd3dc;
+}
+html.dark .item-cover-placeholder {
+  background-color: #1d1e1f;
+  color: #6c7078;
+}
+html.dark .form-tip {
+  color: #a3a6ad;
+}
+html.dark .cover-placeholder {
+  color: #8a8f9a;
+}
+html.dark .empty-box {
+  color: #a3a6ad;
+}

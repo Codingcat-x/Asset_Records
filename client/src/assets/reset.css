@@ -1,9 +1,62 @@
 :root {
   --margin-size: 12px;
+  --padding-size: 12px;
+  --padding-size-s: 8px;
+
+  --main-height: calc(100vh - 76px);
+
+  --primary-color: #1560f7;
+  --card-bg: #f1f3f5;
+  --card-border-color: #ccc;
+  --card-border-radius: 8px;
 }
 .container {
-  max-width: 1440px;
+  max-width: 1080px;
   margin: 0 auto var(--margin-size);
 }
 .d-flex {display: flex;}
 .d-flex.center {justify-content: center;}
+.d-flex.sb {justify-content: space-between; align-items: center;}
+
+.btn-gray-bg {
+  background-color: #DCDFE6;
+}
+
+h2 {margin: 0;}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border-color);
+  border-radius: var(--card-border-radius);
+  padding: var(--padding-size-s) var(--padding-size);
+}
+
+/* 自定义滚动条：透明背景、淡灰色滑块、宽度 6px */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* 隐藏两端的上/下箭头按钮（非滚动时不再显示） */
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  background: #c0c4cc; /* 淡灰色 */
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a8abb2;
+}
+/* 滚动条交叉角背景也设为透明 */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox 兼容（细滚动条 + 同色滑块） */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c0c4cc transparent;
+}

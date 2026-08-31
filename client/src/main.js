@@ -5,6 +5,10 @@ import store from './store'
 import './plugins/element'
 import './assets/element-override.css'
 import './assets/reset.css'
+import './assets/dark.css'
+import { initTheme } from './utils/theme'
+
+initTheme()
 
 Vue.config.productionTip = false
 
